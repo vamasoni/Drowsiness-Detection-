@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drowsiness Detection System</title>
+	<link rel = "icon" href = "../static/assets/logo.png" type = "image/x-icon"> 
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style type="text/css">
+		body, html{
+		  height:100%;
+		  margin:0;
+		  font-size:16px;
+		  font-family:"Lato", sans-serif;
+		  font-weight:400;
+		  line-height:1.8em;
+		  color:#666;
+		}
+
+		.pimg1{
+		  position:relative;
+		  opacity:1;
+		  background-position:center;
+		  background-size:cover;
+		  background-repeat:no-repeat;
+		  background-attachment:fixed;
+		}
+
+		.pimg1{
+		  background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url("../static/assets/shibua_gif.gif");
+		  background-repeat: no-repeat;
+		  min-height:100%;
+		  background-size: cover; 
+		}
+	
+		.section{
+		  text-align:center;
+		  padding:50px 80px;
+		}
+
+		.l-div{
+			width:280px;
+			height: 250px;
+			background-color: none;
+			animation: movingl 3s;
+		}
+		.r-div{
+			width:310px;
+			height: 250px;
+			background-color: none;
+			position: relative;
+			animation: movingr 3s;
+		}
+		#div1{animation-timing-function: linear;}
+		#div2{animation-timing-function: linear;}
+		#div3{animation-timing-function: linear;}
+		@keyframes movingl
+		{
+			from{left:-500px;}
+			to{left:-250px;}
+		}	
+		@keyframes movingr
+		{
+			from{left:500px;}
+			to{left:-100px;}
+		}
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}		
+		a {
+		  position: relative;
+		  padding: 10px 40px;
+		  display: block;
+		  text-decoration: none;
+		  text-transform: uppercase;
+		  width: 200px;
+		  overflow: hidden;
+		  border-radius: 40px;
+		}
+
+		a span {
+		  position: relative;
+		  color: #fff;
+		  font-size: 20px;
+		  font-family: Arial;
+		  letter-spacing: 5px;
+		  z-index: 1;
+		}
+
+		a .liquid {
+		  position: absolute;
+		  top: -80px;
+		  left: 0;
+		  width: 200px;
+		  height: 200px;
+		  background: rgb(214,137,16);
+		  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+		  transition: .5s;
+		}
+
+		a .liquid::after,
+		a .liquid::before {
+		  content: '';
+		  width: 200%;
+		  height: 200%;
+		  position: absolute;
+		  top: 0;
+		  left: 50%;
+		  transform: translate(-50%, -75%);
+		  background: #000;
+		}
+
+		a .liquid::before {
+		  
+		  border-radius: 45%;
+		  background: rgba(249,231,159);
+		  animation: animate 5s linear infinite;
+		}
+
+		a .liquid::after {
+		  
+		  border-radius: 40%;
+		  background: rgba(31, 44, 84, .5);
+		  animation: animate 10s linear infinite;
+		}
+
+		a:hover .liquid{
+		  top: -120px;
+		}
+
+		@keyframes animate {
+		  0% {
+		    transform: translate(-50%, -75%) rotate(0deg);
+		  }
+		  100% {
+		    transform: translate(-50%, -75%) rotate(360deg);
+		  }
+		}
+			.container1 {
+			 position: absolute;
+			 -webkit-transform: translate(-50%, -50%);
+			 -ms-transform: translate(-50%, -50%);
+			 transform: translate(-50%, -50%);
+			 left: 50%;
+			 top: 50%;
+			 font-family: 'Raleway', sans-serif;
+		}
+		 .title {
+			 font-weight: 800;
+			 color: transparent;
+			 font-size: 55px;
+			 background: url("../static/assets/shibua_gif.gif") repeat;
+			 background-position: 40% 50%;
+			 -webkit-background-clip: text;
+			 position: relative;
+			 text-align: center;
+			 line-height: 90px;
+			 letter-spacing: 0.5px;
+		}
+		 .subtitle {
+			 display: block;
+			 text-align: center;
+			 text-transform: uppercase;
+			 padding-top: 10px;
+			 color:rgba(28, 54, 79,.9);
+		}
+	</style>	
+	
+</head>
+<body>
+	<div class="pimg1">
+        <div class="container1">
+  			<div class="title">DROWSINESS DETECTION SYSTEM</div>
+  			<div class="subtitle"> The best drivers are aware that they must be beware. </div>
+		</div>
+		<div style="padding: 20px;" class="section">
+			<a href="{{ url_for('static', filename='test1.html') }}">
+			<span>Let's Start</span>
+			<div class="liquid"></div>
+			</a>
+		</div>
+  	</div>	
+</body>
+</html>
